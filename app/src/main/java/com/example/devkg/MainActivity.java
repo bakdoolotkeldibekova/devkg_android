@@ -3,62 +3,86 @@ package com.example.devkg;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
-import com.example.devkg.adapter.StateAdapter;
-import com.example.devkg.model.State;
+import com.example.devkg.activity.VacancyActivity;
+import com.example.devkg.adapter.VacancyAdapter;
+import com.example.devkg.model.Vacancy;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<State> states = new ArrayList<State>();
+    ArrayList<Vacancy> vacancies = new ArrayList<Vacancy>();
+    private RecyclerView recyclerView;
+    private VacancyAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // начальная инициализация списка
+        recyclerView = findViewById(R.id.list);
         setInitialData();
-        RecyclerView recyclerView = findViewById(R.id.list);
+        setAdapter();
+    }
+
+    private void setAdapter(){
+        setOnClickListener();
         // создаем адаптер
-        StateAdapter adapter = new StateAdapter(this, states);
+        VacancyAdapter adapter = new VacancyAdapter(this, vacancies, listener);
         // устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter);
     }
 
+    private void setOnClickListener() {
+         listener = new VacancyAdapter.RecyclerViewClickListener() {
+             @Override
+             public void onClick(View v, int position) {
+                 Intent intent = new Intent(getApplicationContext(), VacancyActivity.class);
+                 intent.putExtra("vacancyName", vacancies.get(position).getName());
+                 startActivity(intent);
+             }
+         };
+    }
+
     private void setInitialData(){
 
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Чили", "Сантьяго", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
-        states.add(new State ("Бразилия", "Бразилиа", R.drawable.image));
-        states.add(new State ("Аргентина", "Буэнос-Айрес", R.drawable.image));
-        states.add(new State ("Колумбия", "Богота", R.drawable.image));
-        states.add(new State ("Уругвай", "Монтевидео", R.drawable.image));
+        vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
+        vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
+        vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Full-Stack Developer (React+Node.js)", "Ptolemay LLC", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Angular Developer", "MadDevs", R.drawable.image));
+        vacancies.add(new Vacancy("Senior IOS developer (Swift)", "CodifyLab", R.drawable.image));
+        vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
+        vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
+        vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
+        vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
+        vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Full-Stack Developer (React+Node.js)", "Ptolemay LLC", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Angular Developer", "MadDevs", R.drawable.image));
+        vacancies.add(new Vacancy("Senior IOS developer (Swift)", "CodifyLab", R.drawable.image));
+        vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
+        vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
+        vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
+        vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
+        vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Full-Stack Developer (React+Node.js)", "Ptolemay LLC", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Angular Developer", "MadDevs", R.drawable.image));
+        vacancies.add(new Vacancy("Senior IOS developer (Swift)", "CodifyLab", R.drawable.image));
+        vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
+        vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
+        vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
+        vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
+        vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Full-Stack Developer (React+Node.js)", "Ptolemay LLC", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Angular Developer", "MadDevs", R.drawable.image));
+        vacancies.add(new Vacancy("Senior IOS developer (Swift)", "CodifyLab", R.drawable.image));
+        vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
+        vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
+
 
 
 

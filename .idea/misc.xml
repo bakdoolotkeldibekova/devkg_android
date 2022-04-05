@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/bagdash/AndroidStudioProjects/devkg2/app/src/main/res/layout/activity_main.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/bagdash/AndroidStudioProjects/devkg2/app/src/main/res/layout/item_activity.xml" value="0.16302083333333334" />
         <entry key="..\:/Users/bagdash/AndroidStudioProjects/devkg2/app/src/main/res/layout/list_item.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/bagdash/AndroidStudioProjects/devkg2/app/src/main/res/layout/vacancy_activity.xml" value="0.22" />
       </map>
     </option>
   </component>

@@ -1,15 +1,15 @@
 package com.example.devkg.model;
 
-public class State {
+public class Vacancy {
 
     private String name; // название
-    private String capital;  // столица
+    private String company;  // столица
     private int flagResource; // ресурс флага
 
-    public State(String name, String capital, int flag){
+    public Vacancy(String name, String company, int flag){
 
         this.name=name;
-        this.capital=capital;
+        this.company = company;
         this.flagResource=flag;
     }
 
@@ -21,12 +21,12 @@ public class State {
         this.name = name;
     }
 
-    public String getCapital() {
-        return this.capital;
+    public String getCompany() {
+        return this.company;
     }
 
-    public void setCapital(String capital) {
-        this.capital = capital;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public int getFlagResource() {
