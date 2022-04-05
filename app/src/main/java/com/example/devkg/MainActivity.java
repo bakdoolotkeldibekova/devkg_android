@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.devkg.activity.FavoriteActivity;
 import com.example.devkg.activity.VacancyActivity;
 import com.example.devkg.adapter.VacancyAdapter;
 import com.example.devkg.model.Vacancy;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, VacancyActivity.class));
+                startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
             }
         });
     }
@@ -78,13 +79,12 @@ public class MainActivity extends AppCompatActivity {
         vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
         vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
         vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
-        vacancies.add(new Vacancy("Python developer\", \"АУП-Компани\", R.drawable.image));\n" +
-                "        vacancies.add(new Vacancy(\"Frontend JavaScript (ReactJS)\", \"Argenta\", R.drawable.image));\n" +
-                "        vacancies.add(new Vacancy(\"Middle\\\\Senior Full-Stack Developer (React+Node.js)\", \"Ptolemay LLC\", R.drawable.image));\n" +
-                "        vacancies.add(new Vacancy(\"Middle\\\\Senior Angular Developer\", \"MadDevs\", R.drawable.image));\n" +
-                "        vacancies.add(new Vacancy(\"Senior IOS developer (Swift)\", \"CodifyLab\", R.drawable.image));\n" +
-                "        vacancies.add(new Vacancy(\"Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));
-        vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
+        vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
+        vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Full-Stack Developer (React+Node.js)", "Ptolemay LLC", R.drawable.image));
+        vacancies.add(new Vacancy("Middle\\Senior Angular Developer", "MadDevs", R.drawable.image));
+        vacancies.add(new Vacancy("Senior IOS developer (Swift)", "CodifyLab", R.drawable.image));
+        vacancies.add(new Vacancy("Product Engineer, Start-up, Remote, (Java, Flutter & AWS)", "GIG-A", R.drawable.image));vacancies.add(new Vacancy("Flutter Developer", "Zensoft", R.drawable.image));
         vacancies.add(new Vacancy("Java developer", "DemirBank", R.drawable.image));
         vacancies.add(new Vacancy("Python developer", "АУП-Компани", R.drawable.image));
         vacancies.add(new Vacancy("Frontend JavaScript (ReactJS)", "Argenta", R.drawable.image));
