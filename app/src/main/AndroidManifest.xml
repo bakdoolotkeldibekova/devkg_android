@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.VacancyActivity" />
-        <activity android:name=".activity.FavoriteActivity"/>
     </application>
 
 </manifest>
