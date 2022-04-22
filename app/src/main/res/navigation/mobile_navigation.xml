@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_vacancy">
+
+    <fragment
+        android:id="@+id/nav_vacancy"
+        android:name="com.example.devkg.ui.vacancy.VacancyFragment"
+        android:label="@string/menu_vacancy"
+        tools:layout="@layout/main_fragment_vacancy" />
+
+    <fragment
+        android:id="@+id/nav_company"
+        android:name="com.example.devkg.ui.company.CompanyFragment"
+        android:label="@string/menu_company"
+        tools:layout="@layout/main_fragment_company" />
+
+    <fragment
+        android:id="@+id/nav_test"
+        android:name="com.example.devkg.ui.test.TestFragment"
+        android:label="@string/menu_test"
+        tools:layout="@layout/main_fragment_test" />
+</navigation>
