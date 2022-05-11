@@ -39,7 +39,7 @@ public class VacancyFragment extends Fragment {
         return root;
     }
     private void createTabFragment(){
-        adapter = new PackageTabAdapter(getParentFragmentManager(), tabLayout);
+        adapter = new PackageTabAdapter(getChildFragmentManager(), tabLayout);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

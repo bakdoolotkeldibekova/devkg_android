@@ -44,16 +44,6 @@ public class MainFragment extends Fragment {
         packageViewAdapter = new PackageViewAdapter(context, vacancies);
         recyclerView.setAdapter(packageViewAdapter);
         setAdapter();
-
-        Button btn = view.findViewById(R.id.mainMenu);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.smoothScrollToPosition(0);
-            }
-        });
-
     }
 
     private void setAdapter(){
